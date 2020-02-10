@@ -120,7 +120,7 @@ public class UserDaoService implements UserDao {
             dateStatusDtos.add(dateStatusDto);
             for (DateStatusDto statusDto : dateStatusDtos) {
                 Date date = new Date();
-                if (date.getTime() - statusDto.getDate() > 300000) {
+                if (date.getTime() - statusDto.getDate() >= 300000) {
                     assert dateStatusDto != null;
                     updateStatus(dateStatusDto.id);
                 }
